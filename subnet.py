@@ -56,7 +56,7 @@ class Subnet(object):
     def contains_ip(self, ip):
         'Returns True if ip is in network object'
 
-        thisip  = struct.unpack("!I", socket.inet_aton(ip))[0]
+        thisip  = struct.unpack("!L", socket.inet_aton(ip))[0]
 
         if (thisip >= self.network) and (thisip <= self.broadcast):
             return True
